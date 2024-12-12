@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Produk</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-image: url('./image/bg2.jpg');
+      color: #333;
+    }
+
+    .header {
+      background-color: #ffc107;
+      color: #333;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background: rgba(179, 173, 173, 0.952);
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-image {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .product-details {
+      margin-top: 20px;
+    }
+
+    .product-details h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .product-details p {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #ffc107;
+      color: #333;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .back-button:hover {
+      background-color: #e0a800;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <h1>Detail Produk</h1>
+  </header>
+
+  <div class="container">
+    <img id="product-image" class="product-image" src="" alt="Detail Gambar Produk">
+    <div class="product-details">
+      <h1 id="product-name"></h1>
+      <p><strong>Harga:</strong> <span id="product-price"></span></p>
+      <p id="product-description"></p>
+    </div>
+    <a href="kerupuk.html" class="back-button">Kembali ke Beranda</a>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const name = urlParams.get('name');
+    const price = urlParams.get('price');
+    const description = urlParams.get('description');
+    const image = urlParams.get('image');
+
+    document.getElementById('product-name').textContent = name;
+    document.getElementById('product-price').textContent = price;
+    document.getElementById('product-description').textContent = description;
+    document.getElementById('product-image').src = image;
+  </script>
+</body>
+
+</html>
